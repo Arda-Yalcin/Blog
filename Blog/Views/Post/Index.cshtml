@@ -1,0 +1,86 @@
+@using System.Diagnostics.Eventing.Reader
+@using System.Security.Cryptography
+@{
+int sayi = 0;
+float OndalikliSayi = 1;
+string Metin ="İfade";
+bool Bayrak =true;
+int sayac = 10;
+
+string Ad ="Arda Yalçın";
+
+List<int> Sayilar=new List<int>();
+    Sayilar.Add(3);
+    Sayilar.Add(6);
+    Sayilar.Add(2);
+    /*
+    Sayilar.Remove(3); // sayı 3ü siler
+    Sayilar.RemoveAt(1); //1. indexteki sayıyı siler
+    Sayilar.Clear(); //Tüm Listeyi siler RemoveAll da aynısını yapar
+    */
+
+int yas=16;
+
+
+
+}
+
+<h2 class="text-center">Benim Blog Sayfam! @Ad</h2>
+<!-- if Yapısı -->
+<div class="text-center pt-3">
+    @if(yas>30){
+        <h3 style="color: red;">Yaşli</h3>    
+    }else if(yas<30){
+        <h3 style="color: blue;"> Genç</h3>
+    }
+    
+
+</div>
+
+<!-- for Yapısı -->
+<div>
+    @for(int i=0; i<5; i++){
+        <p>@i</p>
+    }
+</div>
+<hr>
+<!-- While -->
+<div
+    @while(sayac>0){
+        <span>@sayac -</span>
+        sayac--;
+    }
+</div>
+<hr>
+
+<!-- foreach -->
+<div>
+@foreach(var item in Sayilar){
+    <span>@item.</span>
+}    
+</div>
+
+<hr>
+<div>
+    @{
+        List<string> Images=new List<string>();
+            Images.Add("agac.webp");
+            Images.Add("araba.jpg");
+            Images.Add("manzara1.jpg");
+            Images.Add("manzara2.jpg");
+    }
+
+
+<div class="row">
+    @foreach(var resim in Images){    
+    <div class="col-3">
+        <div class="card">
+            <div class="card-body">
+                <img src="~/image/@resim" class="card-img-top">  
+            </div>     
+        </div>
+    </div>    
+    }
+</div>
+
+</div>
