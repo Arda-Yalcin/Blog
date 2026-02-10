@@ -20,12 +20,18 @@ List<int> Sayilar=new List<int>();
     */
 
 int yas=16;
-
-
-
 }
 
-<h2 class="text-center">Benim Blog Sayfam! @Ad</h2>
+<hr>
+
+@if(ViewData["Ad"]!=null){
+    <h2 class="text-center text-success">Benim Blog Sayfam! @ViewData["Ad"] </h2>
+}else{
+    <h2 class="text-center">Blog Sayfama Hoş Geldin Yabancı.</h2>
+}
+<h3 class="text-center mt-2 text-primary">@ViewBag.Bolum</h3>
+
+
 <!-- if Yapısı -->
 <div class="text-center pt-3">
     @if(yas>30){
@@ -61,6 +67,7 @@ int yas=16;
 </div>
 
 <hr>
+<!-- Fotoğraf Listesi -->
 <div>
     @{
         List<string> Images=new List<string>();

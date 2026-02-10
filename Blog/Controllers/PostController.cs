@@ -12,11 +12,26 @@ namespace Blog.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Title"]="Ana Sayfa";
+            ViewData["Ad"]="Arda Yalcin";
+            ViewBag.Bolum="Bilişim Teknolojileri";
+            //TempData["Mesaj"]="İşlem Tamamlandı";
+            //return RedirectToAction("Privacy","Home"); 
             return View();
         }
+        public IActionResult Index2()
+        {
+            List<string> Images=new List<string>();
+            Images.Add("agac.webp");
+            Images.Add("araba.jpg");
+            Images.Add("manzara1.jpg");
+            Images.Add("manzara2.jpg");
 
+            return View(Images);
+        }
         public IActionResult Goster()
         {
+            ViewData["Title"]="Ana Sayfa1";
             return Content("Merhaba Dünya");
         }
 
@@ -32,6 +47,8 @@ namespace Blog.Controllers
         public IActionResult Yonlendir2()
         {
             return RedirectToAction("Index","Home");
+            //return NotFound(); //Sayfa Bulunamadı hatası verir eror404
+            //return Unauthorized(); //Yetkisiz giriş eror401
         }
     }
 }
